@@ -29,7 +29,7 @@ const Genre = () => {
                         <Preloader error={false} />
                     :
                         error ?
-                            <Preloader error={error} errorCode={errorMessage.status} errorMessage={errorMessage.msg} />
+                            <Preloader error={error} errorMessage={errorMessage} />
                         :
                             <div className="genre mx-auto col-sm-9 mb-5">
                                 <div className="mvcategory">Select Genre</div>

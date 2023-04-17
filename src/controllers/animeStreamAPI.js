@@ -21,7 +21,7 @@ const AnimeStreamAPI = () => {
                 setGenreData(response.data.data)
             }else {
                 setError(true)
-                setErrorMessage(response.data)
+                setErrorMessage(response.data.msg)
             }
             setLoadingData(false)
         })
@@ -41,7 +41,7 @@ const AnimeStreamAPI = () => {
                 setPopularData(response.data.data)
             }else {
                 setError(true)
-                setErrorMessage(response.data)
+                setErrorMessage(response.data.msg)
             }
             setLoadingData(false)
         })
@@ -61,7 +61,7 @@ const AnimeStreamAPI = () => {
                 setNewEpisodeData(response.data.data)
             }else {
                 setError(true)
-                setErrorMessage(response.data)
+                setErrorMessage(response.data.msg)
             }
             setLoadingData(false)
         })
@@ -81,7 +81,7 @@ const AnimeStreamAPI = () => {
                 setAnimeByGenreData(response.data.data)
             }else {
                 setError(true)
-                setErrorMessage(response.data)
+                setErrorMessage(response.data.msg)
             }
             setLoadingData(false)
         })
@@ -101,7 +101,7 @@ const AnimeStreamAPI = () => {
                 setAnimeData(response.data.data)
             }else {
                 setError(true)
-                setErrorMessage(response.data)
+                setErrorMessage(response.data.msg)
             }
             setLoadingData(false)
         })
@@ -136,7 +136,7 @@ const AnimeStreamAPI = () => {
                 setSearchResult(response.data.data)
             }else {
                 setError(true)
-                setErrorMessage(response.data)
+                setErrorMessage(response.data.msg)
             }
             setLoadingData(false)
         })
@@ -156,7 +156,7 @@ const AnimeStreamAPI = () => {
                 setWatchData(response.data.data)
             }else {
                 setError(true)
-                setErrorMessage(response.data)
+                setErrorMessage(response.data.msg)
             }
             setLoadingData(false)
         })

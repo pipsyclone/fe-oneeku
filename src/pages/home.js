@@ -32,7 +32,7 @@ const Home = () => {
                         <Preloader error={false} />
                     :
                         error ?
-                            <Preloader error={error} errorCode={errorMessage.status} errorMessage={errorMessage.msg} />
+                            <Preloader error={error} errorMessage={errorMessage} />
                         :
                             <div className="mx-auto col-sm-9">
                                 {

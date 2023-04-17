@@ -36,7 +36,7 @@ const Search = () => {
                             <div className="mvcategory">Search Result of {keywordanime}</div>
                             
                             {
-                                error && errorMessage.status === 404 ?
+                                error ?
                                     <div className="text-center">
                                         <img src={ResultNotFound} className="img-fluid" width={500} />
                                     </div>

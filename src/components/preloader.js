@@ -8,7 +8,7 @@ const Preloader = (props) => {
                 <span className="spinner spinner-grow spinner-grow-sm preloader-icon"></span>
                 <span className="spinner spinner-grow spinner-grow-sm preloader-icon"></span>
                 <br />
-                {props.error ? <small>Error : {props.errorCode} {props.errorMessage}</small> : ''}
+                {props.error ? <small>Error Message : {props.errorMessage}</small> : ''}
             </div>
         </div>
     )
