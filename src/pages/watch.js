@@ -30,7 +30,7 @@ const Watch = () => {
                         <Preloader error={false} />
                     :
                         error ?
-                            <Preloader error={error} errorCode={errorMessage.status} errorMessage={errorMessage || errorMessage.msg} />
+                            <Preloader error={error} errorCode={errorMessage.status} errorMessage={errorMessage.msg} />
                         :
                             <div className="watchanime mx-auto col-sm-6 mb-5">
                                 <div className="card card-body rounded-0 p-0" style={{backgroundColor: '#1e293b'}}>

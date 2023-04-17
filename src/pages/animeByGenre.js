@@ -31,7 +31,7 @@ const AnimeByGenre = () => {
                         <Preloader error={false} />
                     :
                         error ?
-                            <Preloader error={error} errorCode={errorMessage.status} errorMessage={errorMessage || errorMessage.msg} />
+                            <Preloader error={error} errorCode={errorMessage.status} errorMessage={errorMessage.msg} />
                         :
                             <div className="animegenre mx-auto col-sm-9 mb-5">
                                 <div className="mvcategory">Anime Genre {genreanime}</div>
