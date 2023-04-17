@@ -1,0 +1,270 @@
+.tr-hover:hover {
+    color: #0cc1e0;
+    cursor: pointer;
+}
+
+.middle {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.preloader-wrapper {
+    position: fixed;
+    background-color: #0f172a;
+    z-index: 99999999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.preloader-content {
+    position: absolute;
+    color: white;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.preloader-icon {
+    margin: .5rem;
+}
+
+.topbar {
+    background: rgba(15,23,42, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.input-dark {
+    background-color: #1e293b;
+}
+
+.input-dark:focus {
+    outline: 1px solid #0cc1e0;
+    background-color: #1e293b;
+    color: white;
+}
+
+hr.hr-divider {
+    border-top: 4px dashed #0cc1e0;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.mvcategory {
+    background-color: #1e293b;
+    border-radius: 50px;
+    color: white;
+    width: 30%;
+    padding: 10px 20px 10px 20px;
+    font-size: 15pt;
+}
+
+/* Popular MVCard */
+.popular_mvwrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    max-width: 100%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.popular_mvcard {
+    display: inline-block;
+    margin: .5rem;
+    text-decoration: none;
+    max-width: 280px;
+}
+
+.popular_mvtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+}
+
+.popular_mvimgwrap {
+    height: 350px;
+    transition: 0.5s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.popular_mvbadge {
+    margin-top: 10px;
+    position: absolute;
+    z-index: 99;
+}
+
+.popular_badge-type {
+    border-radius: 0;
+    font-size: 10pt;
+}
+
+.popular_badge-status {
+    border-radius: 0;
+    font-size: 10pt;
+}
+
+.popular_mvimg {
+    width: 100%;
+    transition: .5s;
+}
+
+.popular_mvcard:hover .popular_mvimg {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+}
+
+/* Global MVCard */
+.mvwrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    max-width: 100%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.mvcard {
+    width: 170px;
+    margin: .5rem;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.mvimgwrap {
+    height: 230px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mvimg {
+    width: 100%;
+    transition: .5s;
+}
+
+.mvcard:hover .mvimg {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+}
+
+.mvbadge {
+    margin-top: 10px;
+    position: absolute;
+    z-index: 99;
+}
+
+.badge-type {
+    border-radius: 0;
+    font-size: 9pt;
+}
+
+.badge-status {
+    border-radius: 0;
+    font-size: 9pt;
+}
+
+.mvtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+}
+
+.popular {
+    margin: 10px;
+}
+
+.neweps {
+    margin: 10px;
+}
+
+.epslist {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.epslist::-webkit-scrollbar {
+    width: 5px;
+}
+
+.epslist::-webkit-scrollbar-track {
+    width: 2px;
+    background-color: #475569;
+}
+
+.epslist::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #0cc1e0;
+}
+
+footer {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    background-color: #1e293b;
+    bottom: 0;
+}
+
+@media screen and (max-width: 850px) {
+    .mvcategory {
+        font-size: 15pt;
+        width: 85%;
+        margin-left: 25px;
+    }
+
+    .popular_mvcard {
+        width: 150px;
+    }
+
+    .popular_mvimgwrap {
+        height: 230px;
+    }
+
+    .popular_badge-type {
+        font-size: 9.9pt;
+    }
+
+    .popular_badge-status {
+        font-size: 9.9pt;
+    }
+
+    .mvcard {
+        width: 150px;
+    }
+
+    .mvimgwrap {
+        height: 230px;
+    }
+
+    .badge-type {
+        font-size: 9.9pt;
+    }
+
+    .badge-status {
+        font-size: 9.9pt;
+    }
+}
