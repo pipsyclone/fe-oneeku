@@ -83,9 +83,9 @@ hr.hr-divider {
 
 .popular_mvcard {
     display: inline-block;
-    margin: .5rem;
+    margin: .4rem;
     text-decoration: none;
-    max-width: 280px;
+    max-width: 270px;
 }
 
 .popular_mvtitle {
