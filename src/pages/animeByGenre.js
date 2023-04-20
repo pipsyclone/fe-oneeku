@@ -39,16 +39,18 @@ const AnimeByGenre = () => {
                                     {
                                         animeByGenreData.map((data, key) => {
                                             return (
-                                                <a href={'/view/' + data.slug} className="mvcard" key={key}>
+                                                <a href={'/watch/' + data.epsLink} className="mvcard" key={key}>
                                                     <div className="mvimgwrap">
                                                         <div className="mvbadge">
-                                                            <span className="badge text-bg-info badge-type">{data.type}</span>
-                                                            <span className="badge text-bg-danger badge-status">{data.status}</span>
+                                                            <span className={data.status === "Tamat" ? 'badge text-bg-success badge-type' : 'badge text-bg-danger badge-type'}>{data.status}</span>
                                                         </div>
                                                         <img src={data.imgURL} className="mvimg img-fluid" />
                                                     </div>
 
-                                                    <span className="mt-3 text-white mvtitle">{data.title}</span>
+                                                    <div className='mvtext'>
+                                                        <span className="mt-3 text-white mvtitle">{data.animeTitle}</span>
+                                                        <span className="text-info mvtitle">{data.type}</span>
+                                                    </div>
                                                 </a>
                                             )
                                         })

@@ -63,32 +63,18 @@ hr.hr-divider {
     width: 30%;
     padding: 10px 20px 10px 20px;
     font-size: 15pt;
+    margin-bottom: 30px;
 }
 
 /* Popular MVCard */
-.popular_mvwrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    max-width: 100%;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-}
-
-.popular_mvcard {
+.recomend_mvcard {
     display: inline-block;
-    margin: .4rem;
+    margin: .5rem;
     text-decoration: none;
-    max-width: 270px;
+    max-width: 170px;
 }
 
-.popular_mvtitle {
+.recomend_mvtitle {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -97,53 +83,25 @@ hr.hr-divider {
     -webkit-box-orient: vertical;
 }
 
-.popular_mvimgwrap {
-    height: 350px;
-    transition: 0.5s;
+.recomend_mvimgwrap {
+    height: 210px;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.popular_mvbadge {
-    margin-top: 10px;
-    position: absolute;
-    z-index: 99;
-}
-
-.popular_badge-type {
-    border-radius: 0;
-    font-size: 10pt;
-}
-
-.popular_badge-status {
-    border-radius: 0;
-    font-size: 10pt;
-}
-
-.popular_mvimg {
+.recomend_mvimg {
     width: 100%;
     transition: .5s;
 }
 
-.popular_mvcard:hover .popular_mvimg {
+.recomend_mvcard:hover .recomend_mvimg {
     -webkit-transform: scale(1.15);
             transform: scale(1.15);
 }
 
 /* Global MVCard */
 .mvwrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    max-width: 100%;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    text-align: center;
 }
 
 .mvcard {
@@ -183,6 +141,10 @@ hr.hr-divider {
 .badge-status {
     border-radius: 0;
     font-size: 9pt;
+}
+
+.mvtext {
+    text-align: left;
 }
 
 .mvtitle {
@@ -234,22 +196,6 @@ footer {
         font-size: 15pt;
         width: 85%;
         margin-left: 25px;
-    }
-
-    .popular_mvcard {
-        width: 150px;
-    }
-
-    .popular_mvimgwrap {
-        height: 230px;
-    }
-
-    .popular_badge-type {
-        font-size: 9.9pt;
-    }
-
-    .popular_badge-status {
-        font-size: 9.9pt;
     }
 
     .mvcard {

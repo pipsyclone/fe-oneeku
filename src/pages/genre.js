@@ -37,18 +37,16 @@ const Genre = () => {
                                 <div className="mt-3 text-center mx-auto">
                                     {
                                         genreData.map((data, key) => {
-                                            if (data.type === 'genre') {
-                                                return (
-                                                    <a href={'/genre/' + data.slug} key={key} className="btn btn-primary m-2">{data.genre}</a>
-                                                )
-                                            }
+                                            return (
+                                                <a href={'/genre/' + data.genre} key={key} className="btn btn-primary m-2">{data.genre}</a>
+                                            )
                                         })
                                     }
                                 </div>
                             </div>
                 }
 
-                <Footer classCustom="position-absolute bottom-0" />
+                <Footer />
             </div>
         </>
     )

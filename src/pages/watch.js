@@ -8,20 +8,20 @@ import AnimeStreamAPI from "../controllers/animeStreamAPI";
 
 const Watch = () => {
 
-    const { slug } = useParams();
+    const { animeslug, episode } = useParams();
     const {
         error, errorMessage, loadingData,
         watch, watchData
     } = AnimeStreamAPI();
 
     useEffect(() => {
-        watch(slug)
+        watch(animeslug, episode)
     }, [])
 
     return (
         <>
             <Helmet>
-                <title>OneeKu - {watchData.length === 0 ? '' : watchData[0].series}</title>
+                <title>OneeKu - {watchData.length === 0 ? '' : watchData[0].animeTitle}</title>
             </Helmet>
 
             <div className="content-wrapper">
@@ -32,38 +32,62 @@ const Watch = () => {
                         error ?
                             <Preloader error={error} errorMessage={errorMessage} />
                         :
-                            <div className="watchanime mx-auto col-sm-6 mb-5">
-                                <div className="card card-body rounded-0 p-0" style={{backgroundColor: '#1e293b'}}>
-                                    {
-                                        watchData.map((data, key) => {
-                                            localStorage.setItem('nontonTerakhir', JSON.stringify([slug, data.title, new Date().toDateString()]))
-                                            return (
-                                                <div key={key}>
-                                                    <iframe src={data.vidURL} className="h-full w-full" allowFullScreen="allowFullScreen" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen;" style={{ width: '100%', height: '450px' }} />
+                            <>
+                                <div className="watchanime mx-auto col-sm-6 mb-5">
+                                    <div className="card card-body rounded-0 p-0" style={{backgroundColor: '#1e293b'}}>
+                                        {
+                                            watchData.map((data, key) => {
+                                                return (
+                                                    <div key={key}>
+                                                        <iframe src={data.videoURL} className="h-full w-full" allowFullScreen="allowFullScreen" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen;" style={{ width: '100%', height: '450px' }} />
 
-                                                    <div className="m-3">
-                                                        <h2 className="text-white">{data.title}</h2>
-                                                        <small className="text-white">Release : {data.released}</small>
-                                                        <br />
-                                                        <br />
-                                                        <a href={'/view/' + data.slug} className="btn btn-outline-info rounded-5">{data.series}</a>
+                                                        <div className="m-3">
+                                                            <h2 className="text-white">{data.animeTitle} - Episode {data.episode}</h2>
+                                                            <div className="d-flex justify-content-between mt-3">
+                                                                <a href={'/watch/' + data.prevNext[0].link}  className={data.prevNext[0].link === "" ? 'btn btn-info disabled col me-3' : 'btn btn-info col me-3'}>
+                                                                    <i className="fa-solid fa-angle-left"></i> Prev
+                                                                </a>
 
-                                                        <div className="d-flex justify-content-between mt-3">
-                                                            <a href={'/watch/' + data.prev}  className={data.prev === false ? 'btn btn-info disabled col me-3' : 'btn btn-info col me-3'}>
-                                                                <i className="fa-solid fa-angle-left"></i> Prev
-                                                            </a>
-
-                                                            <a href={data.next} className={data.next === false ? 'btn btn-info disabled col ms-3' : 'btn btn-info col ms-3'}>
-                                                                Next <i className="fa-solid fa-angle-right"></i>
-                                                            </a>
+                                                                <a href={'/watch/' + data.prevNext[1].link} className={data.prevNext[1].link === "" ? 'btn btn-info disabled col ms-3' : 'btn btn-info col ms-3'}>
+                                                                    Next <i className="fa-solid fa-angle-right"></i>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            )
-                                        })
-                                    }
+                                                )
+                                            })
+                                        }
+                                    </div>
                                 </div>
-                            </div>
+                                <div className="watchanime mx-auto col-sm-8 mb-5">
+                                    <div className="card card-body rounded-0 p-0" style={{backgroundColor: '#1e293b'}}>
+                                        {
+                                            watchData.map((data, key) => {
+                                                return (
+                                                    <div className="d-flex" key={key}>
+                                                        <img src={data.imgURL} className="img-fluid" width={900} />
+
+                                                        <div className="m-3 text-white">
+                                                            {data.description}
+                                                            <br />
+                                                            <br />
+                                                            {
+                                                                data.genres.map((genres, key) => {
+                                                                    return (
+                                                                        <a href={'/genre/' + genres.genre} className={key === 0 ? 'btn btn-info rounded-0 me-2' : 'btn btn-info rounded-0 ms-2 me-2'}>
+                                                                            {genres.genre}
+                                                                        </a>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </>
                 }
 
                 <Footer />

@@ -33,12 +33,12 @@ const AnimeStreamAPI = () => {
     }
 
     // Popular Anime
-    const [popularData, setPopularData] = useState([]);
-    const popular = async () => {
-        await axios.get(baseURL_API + '/popular')
+    const [recomendationData, setRecomendationData] = useState([]);
+    const recomendation = async () => {
+        await axios.get(baseURL_API + '/recomendation')
         .then((response) => {
             if (response.data.status === 200) {
-                setPopularData(response.data.data)
+                setRecomendationData(response.data.data)
             }else {
                 setError(true)
                 setErrorMessage(response.data.msg)
@@ -92,26 +92,6 @@ const AnimeStreamAPI = () => {
         })
     }
 
-    // View Anime
-    const [animeData, setAnimeData] = useState([]);
-    const anime = async (animeSlug) => {
-        await axios.get(baseURL_API + '/view/' + animeSlug)
-        .then((response) => {
-            if (response.data.status === 200) {
-                setAnimeData(response.data.data)
-            }else {
-                setError(true)
-                setErrorMessage(response.data.msg)
-            }
-            setLoadingData(false)
-        })
-        .catch((error) => {
-            setError(true)
-            setErrorMessage(error.message)
-            setLoadingData(false)
-        })
-    }
-
     // Search Anime
     const [searchResult, setSearchResult] = useState([]);
     const handleSearch = useFormik({
@@ -129,8 +109,8 @@ const AnimeStreamAPI = () => {
         }
     })
 
-    const loadSearchResult = async (keyword) => {
-        await axios.get(baseURL_API + '/search/' + keyword)
+    const loadSearchResult = async (keyword, page) => {
+        await axios.get(baseURL_API + '/search/' + keyword + '/' + page)
         .then((response) => {
             if (response.data.status === 200) {
                 setSearchResult(response.data.data)
@@ -149,8 +129,8 @@ const AnimeStreamAPI = () => {
 
     // Watch Streaming Anime
     const [watchData, setWatchData] = useState([]);
-    const watch = async (slugeps) => {
-        await axios.get(baseURL_API + '/watch/' + slugeps)
+    const watch = async (animeslug, episode) => {
+        await axios.get(baseURL_API + '/watch/' + animeslug + '/' + episode)
         .then((response) => {
             if (response.data.status === 200) {
                 setWatchData(response.data.data)
@@ -170,10 +150,9 @@ const AnimeStreamAPI = () => {
     return {
         error, errorMessage, loadingData,
         genre, genreData,
-        popular, popularData,
+        recomendation, recomendationData,
         newEpisode, newEpisodeData,
         animeByGenre, animeByGenreData,
-        anime, animeData,
         handleSearch, searchResult, loadSearchResult,
         watch, watchData
     }
