@@ -47,7 +47,7 @@ const Search = () => {
                                             {
                                                 searchResult.map((data, key) => {
                                                     return (
-                                                        <a href={'/view/' + data.epsLink} className="mvcard" key={key}>
+                                                        <a href={'/watch/' + data.epsLink} className="mvcard" key={key}>
                                                             <div className="mvimgwrap">
                                                                 <div className="mvbadge">
                                                                     <span className={data.status === "Tamat" ? 'badge text-bg-success badge-type' : 'badge text-bg-danger badge-type'}>{data.status}</span>

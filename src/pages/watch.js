@@ -65,7 +65,9 @@ const Watch = () => {
                                             watchData.map((data, key) => {
                                                 return (
                                                     <div className="d-flex" key={key}>
-                                                        <img src={data.imgURL} className="img-fluid" width={900} />
+                                                        <div className="col-sm-3 mt-3 ms-3 mb-3">
+                                                            <img src={data.imgURL} className="img-fluid w-100" />
+                                                        </div>
 
                                                         <div className="m-3 text-white">
                                                             {data.description}
